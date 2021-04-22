@@ -7,8 +7,9 @@ public class Ex01_ArrayStudent {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 
-		int[] studentnumber = null;
-		int score = 0;
+		int[] score = null;
+
+		int studentnumber = 0;
 
 		boolean run = true;
 		while (run) {
@@ -24,21 +25,21 @@ public class Ex01_ArrayStudent {
 				case 1:
 					System.out.println("학생수>");
 	
-					score = scan.nextInt();
-					studentnumber = new int[score];
+					studentnumber = scan.nextInt();
+					score = new int[studentnumber];
 
 					break;
 
 				case 2:
-					for (int i = 0; i < studentnumber.length; i++) {
+					for (int i = 0; i < score.length; i++) {
 					System.out.print((i + 1) + "번째 학생점수 : ");
-					studentnumber[i] = scan.nextInt();
+					score[i] = scan.nextInt();
 					}
 					break;
 					
 				case 3:
-					for (int i = 0; i < studentnumber.length; i++) {
-					System.out.println((i + 1) + "번 째 학생점수 : " + studentnumber[i]);
+					for (int i = 0; i < score.length; i++) {
+					System.out.println((i + 1) + "번 째 학생점수 : " + score[i]);
 					}
 					break;
 
@@ -46,12 +47,12 @@ public class Ex01_ArrayStudent {
 					int sum = 0;
 					int avg = 0;
 					int max = 0;
-					for (int i = 0; i < studentnumber.length; i++) {
-					sum += studentnumber[i];
-					avg = sum/score;
+					for (int i = 0; i < score.length; i++) {
+					sum += score[i];
+					avg = sum/score.length;
 					
-					if(studentnumber[i] > max) {
-						max = studentnumber[i];
+					if(score[i] > max) {
+						max = score[i];
 					}
 					
 					}
@@ -59,19 +60,19 @@ public class Ex01_ArrayStudent {
 					System.out.println("최대점수 :" + max);
 									
 					int temp = 0;
-					for (int i = 0; i < studentnumber.length; i++) {
+					for (int i = 0; i < score.length; i++) {
 						
-							for (int j = i + 1; j < studentnumber.length; j++) {
+							for (int j = i + 1; j < score.length; j++) {
 								
-								if (studentnumber[i] < studentnumber[j]) { 
-									temp = studentnumber[i]; 
-									studentnumber[i] = studentnumber[j]; 
-									studentnumber[j] = temp; 
+								if (score[i] < score[j]) { 
+									temp = score[i]; 
+									score[i] = score[j]; 
+									score[j] = temp; 
 								}
 							}
 						}
-					for (int i = 0; i < studentnumber.length; i++) {
-						System.out.println(studentnumber[i]);
+					for (int i = 0; i < score.length; i++) {
+						System.out.println(score[i]);
 					}
 					break;
 					
